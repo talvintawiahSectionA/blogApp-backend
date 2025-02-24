@@ -11,12 +11,13 @@ const Post = sequelize.define(
       primaryKey: true,
     },
     title: { type: DataTypes.STRING, allowNull: false },
-    content: { type: DataTypes.TEXT, allowNull: false },
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     likes: { type: DataTypes.INTEGER, defaultValue: 0 },
   },
   { timestamps: true }
 );
-
-Post.belongsTo(User, { foreignKey: "userId" });
 
 module.exports = Post;

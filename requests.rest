@@ -1,0 +1,38 @@
+GET http://localhost:5001/api/users/
+
+###
+
+Post http://localhost:5001/api/posts/
+Content-Type: application/json
+
+{
+    "userId" : "d12cad7b-9ade-435e-ad39-a7abd94b6f48",
+    "title" : "Test",
+    "content" : "Test!!"
+}
+
+###
+
+GET http://localhost:5001/api/posts/
+
+###
+
+Post http://localhost:5001/api/users/register/
+Content-Type: application/json
+
+{
+    "username": "Jah",
+    "email": "jah@gmail.com",
+    "password": "password"
+}
+
+###
+
+Post http://localhost:5001/api/users/login/
+Content-Type: application/json
+
+
+{
+    "email": "homy@gmail.com",
+    "password": "password"
+}

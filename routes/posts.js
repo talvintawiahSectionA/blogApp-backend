@@ -1,5 +1,5 @@
 const express = require("express");
-const Post = require("../models/Post");
+const { Post, User } = require("../models");
 
 const router = express.Router();
 
@@ -16,7 +16,9 @@ router.post("/", async (req, res) => {
 
 // Get all posts
 router.get("/", async (req, res) => {
-  const posts = await Post.findAll({ include: "User" });
+  const posts = await Post.findAll({
+    include: [{ model: User, as: "author" }],
+  });
   res.json(posts);
 });
 
